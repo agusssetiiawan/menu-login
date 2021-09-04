@@ -50,12 +50,6 @@
 		}
 	</style>
 
-<?php $lambang ="img/1.png";
-
-
-echo $lambang
-?>
-
 
 
 </head>
