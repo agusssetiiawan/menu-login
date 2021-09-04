@@ -1,3 +1,22 @@
+<?php 
+if (isset($_POST["submit"])) {
+	if($_POST["nama"] == "admin" && $_POST["password"] == "123"){
+		header("Location: logout.php");
+		exit;
+	}else{
+		$eror = true;
+
+	}
+}
+
+
+
+
+
+
+
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,6 +67,12 @@
 			width:100px;
 			background-color:#618FBF;
 		}
+
+		p {
+			text-align:center;
+			color:red;
+			font-style:italic;
+		}
 	</style>
 
 
@@ -56,30 +81,38 @@
 <body>
 	<div>
 		<h1>Member login</h1>
-			<table cellpadding="7">
-				<form action="logout.php" method="POST">
-					<tr>
-						<td colspan="2"><input type="text" name="nama" id="username"></td>
-					
-					</tr>
-					<tr>
-						<td colspan="2"><input type="password" name="password" id="password" ></td>
-						
-					</tr>	
-					<tr>
-						<td><input type="checkbox" id="check"><label for="check">remember me</label></td>
-						<td><a href="">forgot password ?</a></td>
-					</tr>	
-					<tr>
-						<td><button type="submit" name="submit">ok</button></td>
-						<td><button type="submit" name="submit">cancel</button></td>
-					</tr>	
-					<tr>
-						<td colspan="2"><a href="">create new account</a>
-					
-					</tr>	
-				</form>
-			</table>
+		<?php if (isset($eror)) {?>
+
+		<p>password/username salah !!!</p>
+
+		<?php } ?>
+
+
+
+					<table cellpadding="7">
+						<form action="" method="POST">
+							<tr>
+								<td colspan="2"><input type="text" name="nama" id="username" placeholder="username"></td>
+							
+							</tr>
+							<tr>
+								<td colspan="2"><input type="password" name="password" id="password" placeholder="password" ></td>
+								
+							</tr>	
+							<tr>
+								<td><input type="checkbox" id="check"><label for="check">remember me</label></td>
+								<td><a href="">forgot password ?</a></td>
+							</tr>	
+							<tr>
+								<td><button type="submit" name="submit">ok</button></td>
+								<td><button type="submit" name="cancel">cancel</button></td>
+							</tr>	
+							<tr>
+								<td colspan="2"><a href="">create new account</a>
+							
+							</tr>	
+						</form>
+					</table>
 	</div>
 
 

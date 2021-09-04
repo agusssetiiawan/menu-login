@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +9,7 @@
 	<title>menu logout</title>
 </head>
 <body>
-	<h1>Selamat datang  <?php echo $_POST["name"] ?></h1>
+	<h1>Selamat datang  <?php echo $_POST["nama"] ?></h1>
 	<a href="login.php">logout</a>
 	
 </body>
